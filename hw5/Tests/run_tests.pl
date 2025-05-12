@@ -1,0 +1,88 @@
+&sectionHeader('Unit Tests (70 points)');
+$subtotal = 0;
+@SOURCE = ();
+@LINK = ();
+$subtotal = &runTest('001', 'kdtree_add and kdtree_destroy');
+$subtotal += &runTest('002', 'kdtree_add once');
+$subtotal += &runTest('003', 'kdtree_contains for one-item set');
+$subtotal += &runTest('004', 'kdtree_add multiple times');
+$subtotal += &runTest('005', 'kdtree_contains for larger set');
+$subtotal += &runTest('006', 'kdtree_for_each_range for entire set');
+$subtotal += &runTest('007', 'kdtree_for_each_range for non-empty subset');
+$subtotal += &runTest('008', 'kdtree_for_each_range with points on boundary');
+$subtotal += &runTest('009', 'kdtree_create non-empty');
+$subtotal = $subtotal * 70 / 9;
+$total += floor($subtotal);
+&sectionResults('Unit Tests (70 points)', $subtotal, 9, $checkpoint );
+$testCount += 9;
+
+&sectionHeader('Add Efficiency Test (10 points)');
+$subtotal = 0;
+@SOURCE = ();
+@LINK = ();
+$subtotal = &runTest('010', 'kdtree_add random');
+$subtotal = $subtotal * 10 / 1;
+$total += floor($subtotal);
+&sectionResults('Add Efficiency Test (10 points)', $subtotal, 1, $checkpoint );
+$testCount += 1;
+
+&sectionHeader('Valgrind (20 points)');
+$subtotal = 0;
+@SOURCE = ();
+@LINK = ();
+$subtotal = &runTest('011', 'kdtree_add and kdtree_destroy');
+$subtotal += &runTest('012', 'kdtree_add multiple times');
+$subtotal += &runTest('013', 'kdtree_for_each_range for entire set');
+$subtotal += &runTest('014', 'kdtree_create non-empty');
+$subtotal = $subtotal * 20 / 4;
+$total += floor($subtotal);
+&sectionResults('Valgrind (20 points)', $subtotal, 4, $checkpoint );
+$testCount += 4;
+
+&sectionHeader('Range Unit Tests');
+$subtotal = 0;
+@SOURCE = ();
+@LINK = ();
+$subtotal = &runTest('015', 'kdtree_range for entire set');
+$subtotal += &runTest('016', 'kdtree_range for non-empty subset');
+$subtotal += &runTest('017', 'kdtree_range for empty subset');
+$checkpoint = $total;
+$total = 0;
+$testCount = 0;
+$total += floor($subtotal);
+&sectionResults('Range Unit Tests', $subtotal, 3, $checkpoint );
+$testCount += 3;
+
+&sectionHeader('Remove Unit Tests');
+$subtotal = 0;
+@SOURCE = ();
+@LINK = ();
+$subtotal = &runTest('018', 'kdtree_remove only item');
+$subtotal += &runTest('019', 'kdtree_remove half the items');
+$subtotal += &runTest('020', 'kdtree_remove followed by kdtree_add');
+$total += floor($subtotal);
+&sectionResults('Remove Unit Tests', $subtotal, 3, $checkpoint );
+$testCount += 3;
+
+&sectionHeader('Range and Remove with Valgrind');
+$subtotal = 0;
+@SOURCE = ();
+@LINK = ();
+$subtotal = &runTest('021', 'kdtree_range for non-empty subset');
+$subtotal += &runTest('022', 'kdtree_range for empty subset');
+$subtotal += &runTest('023', 'kdtree_remove only item');
+$subtotal += &runTest('024', 'kdtree_remove half the items');
+$subtotal += &runTest('025', 'kdtree_remove followed by kdtree_add');
+$total += floor($subtotal);
+&sectionResults('Range and Remove with Valgrind', $subtotal, 5, $checkpoint );
+$testCount += 5;
+
+&sectionHeader('Range Efficiency Test');
+$subtotal = 0;
+@SOURCE = ();
+@LINK = ();
+$subtotal = &runTest('026', 'kdtree_range');
+$total += floor($subtotal);
+&sectionResults('Range Efficiency Test', $subtotal, 1, $checkpoint );
+$testCount += 1;
+

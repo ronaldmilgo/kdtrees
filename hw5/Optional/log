@@ -1,0 +1,25 @@
+ESTIMATE of time to complete assignment: 15 hours
+
+Date   Time Started   Time Spent   Work Compeletd
+-----  ------------   -----------  ---------------
+11/10    5:00pm          2:00       Read assignment and tried to understand the spec fully. Later on looked at the starter code and went though it. Quickly went through the kdtrees slides from lecture
+11/11    8:00pm          3:00       Implemented my kdtree.c partially. Made my makefile as well to test the unit test cases as I went by.
+11/12    4:00pm          3:00       completed implementation of the remaining functions in kdtree.c
+11/14    6:00pm          3:00       Tried debugging my remove function but was not able to spot the problem. Got help with it at threeathon. After which I was done.
+
+                        ------
+                         14:00      TOTAL time spent
+
+
+
+DISCUSSION
+
+The challenging aspect of the assignment was efficiently managing the kdtree's recursive structure. It jogged my recursion abilities a bit.
+Initially it was a bit challenging using cut dimensions since they alternated and I had to figure out a way around them. I misunderstood how 
+the depth and cutting dimensions were related when re-calling the remove function, which caused mismatches  and logical errors when 
+replacing nodes with their minimum or maximum subtree values. 
+Debugging the unit tests was also challenging. Specifically, Unit Tests 13 and 14 revealed that I was inadvertently losing references to 
+some points during node removal. Turned out I was not handling the remove cases where the node has one child well. This required restructuring 
+the remove logic to ensure promoted nodes retained correct relationships and cutting dimensions.
+Despite these struggles, the assignment deepened my understanding of recursive tree structures, efficient range queries, 
+and dynamic memory management. Each debug session taught me valuable lessons about edge cases and the importance of thorough testing.
